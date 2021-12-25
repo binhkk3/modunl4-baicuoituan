@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>THÊM NHÂN VIÊN</h1>
+<p>
+    <a href="/Staff"> ve trang chu</a>
+</p>
+<form action="/Staff/add" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" >
+    <input type="text" name="name"  placeholder="tên e  ê">
+    <input type="text" name="age" placeholder="tuoi">
+    <input type="text" name="salary" placeholder="luong">
+    <select name="departmentId">
+        <option th:each="dep:${department}" th:value="${dep.getId()}" th:text="${dep.getName()}"></option>
+
+    </select>
+    <button>tao</button>
+</form>
+</body>
+</html>

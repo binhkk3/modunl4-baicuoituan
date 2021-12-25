@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>dang sách nhân viên1</h1>
+<p>
+    <a href="/Staff/add">them hang</a>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>salary</th>
+        <th>department</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Sta : ${staff}">
+        <td th:text="${Sta.getName()}"></td>
+        <td th:text="${Sta.getAge()}"></td>
+        <td th:text="${Sta.getSalary()}"></td>
+        <td th:text="${Sta.getDepartment().getName()}"></td>
+    </tr>
+    </tbody>
+    <form class="form-inline" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="key2">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <form class="form-inline" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="key" value="a">luong hơn 2000</button>
+    </form>
+    <form class="form-inline" >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="">in ra tất cả</button>
+</form>
+    <form class="form-inline" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="key" value="c">luong 3 nguoi top dau</button>
+    </form>
+
+</table>
+</body>
+</html>
