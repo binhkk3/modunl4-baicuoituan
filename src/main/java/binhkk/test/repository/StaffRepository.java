@@ -11,6 +11,6 @@ public interface StaffRepository extends JpaRepository<Staff,Long> {
 Iterable<Staff> findByNameContaining (String name);
 Iterable<Staff> findAllBySalaryGreaterThan(int salary);
 @Modifying
-    @Query(value = "select *from staff where salary = order by likes desc limit 3", nativeQuery = true)
+    @Query(value = "select *from staff order by salary desc limit  3", nativeQuery = true)
     Iterable<Staff> findTop3Salary();
 }
