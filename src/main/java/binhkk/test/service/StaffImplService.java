@@ -43,8 +43,8 @@ public class StaffImplService implements IStaffService {
     }
 
     @Override
-    public Iterable<Staff> findTop3Salary() {
-        return staffRepository.findTop3Salary();
+    public Iterable<Staff> Top3Salary() {
+        return staffRepository.Top3Salary();
     }
 
 

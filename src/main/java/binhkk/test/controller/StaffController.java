@@ -48,7 +48,7 @@ public class StaffController {
                     return "showlist";
 
                 case "c":
-                    staffIterable = staffService.findTop3Salary();
+                    staffIterable = staffService.Top3Salary();
                     model.addAttribute("staff", staffIterable);
                     return "showlist";
                 default:

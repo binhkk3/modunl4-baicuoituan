@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getAllStaff() {
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8080/api/Department",
+                success: function (data) {
+                    console.log(data)
+                    displayStaff(data)
+                }
+            })
+
+            function displayStaff(array) {
+                let res = ""
+                for (let i = 0; i < array.length; i++) {
+                    res += array[i].name + " - " + array[i].age + "<br>"
+                }
+                document.getElementById("display").innerHTML = res;
+            }
+
+        }
+
+        function showFormAdd() {
+            let from = '<input type="text" id="name">\n' +
+                ' <input type="text" id="age">\n ' +
+                '<input type="text" id="salary">\n' +
+            '<select id="departmentId">';
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8080/api/Department",
+                success: function (data){
+
+                    for (let i = 0; i < data.length; i++) {
+                        data+= '</select>\n'+
+                        '<button onClick="add"> them</button>'
+                        document.getElementById("display").innerHTML= data;
+                    }
+                }
+            })
+
+
+            document.getElementById("display").innerHTML = from;
+        }
+
+        function saveStaff() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let salary = document.getElementById("salary").value;
+            let departmentId = document.getElementById("departmentId").value;
+        }
+
+    </script>
+
+</head>
+<body>
+<button onclick="showFormAdd()">them moi</button>
+<button onclick="getAllStaff()">hien thi danh sách</button>
+<div id="display"></div>
+</body>
+</html>

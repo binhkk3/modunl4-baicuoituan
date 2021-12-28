@@ -12,5 +12,5 @@ Iterable<Staff> findByNameContaining (String name);
 Iterable<Staff> findAllBySalaryGreaterThan(int salary);
 @Modifying
     @Query(value = "select *from staff order by salary desc limit  3", nativeQuery = true)
-    Iterable<Staff> findTop3Salary();
+    Iterable<Staff> Top3Salary();
 }
